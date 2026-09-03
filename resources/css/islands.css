@@ -1,0 +1,21 @@
+/*
+ * Vue islands are mounted into a placeholder element, and Vue renders the real
+ * markup *inside* it. Making the placeholder layout-transparent keeps the
+ * component's root element in the same flex/grid position the original Blade
+ * markup occupied, so no existing styling has to change.
+ */
+[data-vue-island] {
+    display: contents;
+}
+
+/*
+ * Icon affordances that do something (share, report) are rendered as <button>
+ * so they are keyboard reachable, unlike the href="#" anchors they replace.
+ * .ico in public/assets/css/style.css was written for anchors, so drop the UA
+ * button chrome it does not override.
+ */
+button.ico {
+    background: none;
+    padding: 0;
+    font: inherit;
+}

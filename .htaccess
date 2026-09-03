@@ -1,0 +1,25 @@
+RewriteEngine On
+
+#ensure https
+#RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+#auth header
+RewriteCond %{HTTP:Authorization} ^(.+)$
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+RewriteCond %{REQUEST_FILE_NAME} -d [OR]
+RewriteCond %{REQUEST_FILE_NAME} -f
+RewriteRule ^ ^$1 [N]
+
+RewriteCond %{REQUEST_URI} (\.\w+$) [NC]
+RewriteRule ^(.*)$ public/$1
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ server.php
+
+<IfModule dir_module>
+    DirectoryIndex server.php index.php
+</IfModule>

@@ -1,0 +1,507 @@
+.dt-scroll-headInner {
+    display: none;
+}
+
+.error {
+    color: #dc3545;
+}
+
+.editor-error-invalid,
+#cover_image_error,
+#cover_file_error {
+    color: #dc3545;
+    font-size: 0.875em;
+}
+
+/* Loader css  */
+.loader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background: rgba(34, 46, 60, .9)
+}
+
+.loader .lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loader .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+}
+
+.loader .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.loader .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.loader .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Btn toggle css */
+.btn-toggle {
+    margin: 0 4rem;
+    padding: 0;
+    position: relative;
+    border: none;
+    height: 1.5rem;
+    width: 3rem;
+    border-radius: 1.5rem;
+    color: #6b7381;
+    background: #bdc1c8
+}
+
+.btn.btn-toggle:hover {
+    background: #bdc1c8
+}
+
+.btn-toggle:focus,
+.btn-toggle.focus,
+.btn-toggle:focus.active,
+.btn-toggle.focus.active {
+    outline: none
+}
+
+.btn-toggle:before,
+.btn-toggle:after {
+    line-height: 1.5rem;
+    width: 4rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: .75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: absolute;
+    bottom: 0;
+    transition: opacity .25s
+}
+
+.btn-toggle:before {
+    content: "Off";
+    left: -4rem
+}
+
+.btn-toggle:after {
+    content: "On";
+    right: -4rem;
+    opacity: .5
+}
+
+.btn-toggle>.handle {
+    position: absolute;
+    top: .1875rem;
+    left: .1875rem;
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 1.125rem;
+    background: #fff;
+    transition: left .25s
+}
+
+.btn-toggle.active {
+    transition: background-color .25s
+}
+
+.btn-toggle.active>.handle {
+    left: 1.6875rem;
+    transition: left .25s
+}
+
+.btn-toggle.active:before {
+    opacity: .5
+}
+
+.btn-toggle.active:after {
+    opacity: 1
+}
+
+.btn-toggle.btn-sm:before,
+.btn-toggle.btn-sm:after {
+    line-height: -.5rem;
+    color: #fff;
+    letter-spacing: .75px;
+    left: .4125rem;
+    width: 2.325rem
+}
+
+.btn-toggle.btn-sm:before {
+    text-align: right
+}
+
+.btn-toggle.btn-sm:after {
+    text-align: left;
+    opacity: 0
+}
+
+.btn-toggle.btn-sm.active:before {
+    opacity: 0
+}
+
+.btn-toggle.btn-xs:before,
+.btn-toggle.btn-xs:after {
+    display: none
+}
+
+.btn-toggle:before,
+.btn-toggle:after {
+    color: #6b7381
+}
+
+.btn-toggle.active,
+.btn-toggle.active:hover {
+    background-color: #29b5a8
+}
+
+.btn-toggle.btn-lg {
+    margin: 0 5rem;
+    padding: 0;
+    position: relative;
+    border: none;
+    height: 2.5rem;
+    width: 5rem;
+    border-radius: 2.5rem
+}
+
+.btn-toggle.btn-lg:focus,
+.btn-toggle.btn-lg.focus,
+.btn-toggle.btn-lg:focus.active,
+.btn-toggle.btn-lg.focus.active {
+    outline: none
+}
+
+.btn-toggle.btn-lg:before,
+.btn-toggle.btn-lg:after {
+    line-height: 2.5rem;
+    width: 5rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: absolute;
+    bottom: 0;
+    transition: opacity .25s
+}
+
+.btn-toggle.btn-lg:before {
+    content: "Off";
+    left: -5rem
+}
+
+.btn-toggle.btn-lg:after {
+    content: "On";
+    right: -5rem;
+    opacity: .5
+}
+
+.btn-toggle.btn-lg>.handle {
+    position: absolute;
+    top: .3125rem;
+    left: .3125rem;
+    width: 1.875rem;
+    height: 1.875rem;
+    border-radius: 1.875rem;
+    background: #fff;
+    transition: left .25s
+}
+
+.btn-toggle.btn-lg.active {
+    transition: background-color .25s
+}
+
+.btn-toggle.btn-lg.active>.handle {
+    left: 2.8125rem;
+    transition: left .25s
+}
+
+.btn-toggle.btn-lg.active:before {
+    opacity: .5
+}
+
+.btn-toggle.btn-lg.active:after {
+    opacity: 1
+}
+
+.btn-toggle.btn-lg.btn-sm:before,
+.btn-toggle.btn-lg.btn-sm:after {
+    line-height: .5rem;
+    color: #fff;
+    letter-spacing: .75px;
+    left: .6875rem;
+    width: 3.875rem
+}
+
+.btn-toggle.btn-lg.btn-sm:before {
+    text-align: right
+}
+
+.btn-toggle.btn-lg.btn-sm:after {
+    text-align: left;
+    opacity: 0
+}
+
+.btn-toggle.btn-lg.btn-sm.active:before {
+    opacity: 0
+}
+
+.btn-toggle.btn-lg.btn-sm.active:after {
+    opacity: 1
+}
+
+.btn-toggle.btn-lg.btn-xs:before,
+.btn-toggle.btn-lg.btn-xs:after {
+    display: none
+}
+
+.btn-toggle.btn-sm {
+    margin: 0 .5rem;
+    padding: 0;
+    position: relative;
+    border: none;
+    height: 1.5rem;
+    width: 3rem;
+    border-radius: 1.5rem
+}
+
+.btn-toggle.btn-sm:focus,
+.btn-toggle.btn-sm.focus,
+.btn-toggle.btn-sm:focus.active,
+.btn-toggle.btn-sm.focus.active {
+    outline: none
+}
+
+.btn-toggle.btn-sm:before,
+.btn-toggle.btn-sm:after {
+    line-height: 1.5rem;
+    width: .5rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: .55rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: absolute;
+    bottom: 0;
+    transition: opacity .25s
+}
+
+.btn-toggle.btn-sm:before {
+    content: "Off";
+    left: -.5rem
+}
+
+.btn-toggle.btn-sm:after {
+    content: "On";
+    right: -.5rem;
+    opacity: .5
+}
+
+.btn-toggle.btn-sm>.handle {
+    position: absolute;
+    top: .1875rem;
+    left: .1875rem;
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 1.125rem;
+    background: #fff;
+    transition: left .25s
+}
+
+.btn-toggle.btn-sm.active {
+    transition: background-color .25s
+}
+
+.btn-toggle.btn-sm.active>.handle {
+    left: 1.6875rem;
+    transition: left .25s
+}
+
+.btn-toggle.btn-sm.active:before {
+    opacity: .5
+}
+
+.btn-toggle.btn-sm.active:after {
+    opacity: 1
+}
+
+.btn-toggle.btn-sm.btn-sm:before,
+.btn-toggle.btn-sm.btn-sm:after {
+    line-height: -.5rem;
+    color: #fff;
+    letter-spacing: .75px;
+    left: .4125rem;
+    width: 2.325rem
+}
+
+.btn-toggle.btn-sm.btn-sm:before {
+    text-align: right
+}
+
+.btn-toggle.btn-sm.btn-sm:after {
+    text-align: left;
+    opacity: 0
+}
+
+.btn-toggle.btn-sm.btn-sm.active:before {
+    opacity: 0
+}
+
+.btn-toggle.btn-sm.btn-sm.active:after {
+    opacity: 1
+}
+
+.btn-toggle.btn-sm.btn-xs:before,
+.btn-toggle.btn-sm.btn-xs:after {
+    display: none
+}
+
+.btn-toggle.btn-xs {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    border: none;
+    height: 1rem;
+    width: 2rem;
+    border-radius: 1rem
+}
+
+.btn-toggle.btn-xs:focus,
+.btn-toggle.btn-xs.focus,
+.btn-toggle.btn-xs:focus.active,
+.btn-toggle.btn-xs.focus.active {
+    outline: none
+}
+
+.btn-toggle.btn-xs:before,
+.btn-toggle.btn-xs:after {
+    line-height: 1rem;
+    width: 0;
+    text-align: center;
+    font-weight: 600;
+    font-size: .75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: absolute;
+    bottom: 0;
+    transition: opacity .25s
+}
+
+.btn-toggle.btn-xs:before {
+    content: "Off";
+    left: 0
+}
+
+.btn-toggle.btn-xs:after {
+    content: "On";
+    right: 0;
+    opacity: .5
+}
+
+.btn-toggle.btn-xs>.handle {
+    position: absolute;
+    top: .125rem;
+    left: .125rem;
+    width: .75rem;
+    height: .75rem;
+    border-radius: .75rem;
+    background: #fff;
+    transition: left .25s
+}
+
+.btn-toggle.btn-xs.active {
+    transition: background-color .25s
+}
+
+.btn-toggle.btn-xs.active>.handle {
+    left: 1.125rem;
+    transition: left .25s
+}
+
+.btn-toggle.btn-xs.active:before {
+    opacity: .5
+}
+
+.btn-toggle.btn-xs.active:after {
+    opacity: 1
+}
+
+.btn-toggle.btn-xs.btn-sm:before,
+.btn-toggle.btn-xs.btn-sm:after {
+    line-height: -1rem;
+    color: #fff;
+    letter-spacing: .75px;
+    left: .275rem;
+    width: 1.55rem
+}
+
+.btn-toggle.btn-xs.btn-sm:before {
+    text-align: right
+}
+
+.btn-toggle.btn-xs.btn-sm:after {
+    text-align: left;
+    opacity: 0
+}
+
+.btn-toggle.btn-xs.btn-sm.active:before {
+    opacity: 0
+}
+
+.btn-toggle.btn-xs.btn-sm.active:after {
+    opacity: 1
+}
+
+.btn-toggle.btn-xs.btn-xs:before,
+.btn-toggle.btn-xs.btn-xs:after {
+    display: none
+}
+
+.btn-toggle.btn-secondary {
+    color: #6b7381;
+    background: #bdc1c8
+}
+
+.btn-toggle.btn-secondary:before,
+.btn-toggle.btn-secondary:after {
+    color: #6b7381
+}
+
+.btn-toggle.btn-secondary.active {
+    background-color: #ff8300
+}
+
+.maxw-5{
+    max-width: 550px;
+}
